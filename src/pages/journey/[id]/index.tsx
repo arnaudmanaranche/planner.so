@@ -30,7 +30,7 @@ import {
   QuickActionsModalProvider,
   useQuickActionsModalActions,
 } from '@/providers/QuickActions.Provider'
-import type { ExpensesByCategory, ExpensesByDay } from '@/types'
+import type { Day, ExpensesByCategory, ExpensesByDay } from '@/types'
 import { formatDate } from '@/utils/date'
 import { SITE_URL } from '@/utils/seo'
 
@@ -271,6 +271,7 @@ function JourneyView({ user }: JourneyProps): ReactNode {
                 departureDate={data?.journey?.departureDate as string}
                 expensesByDay={data?.expensesByDay as ExpensesByDay}
                 isLoading={isFetchingJourney}
+                days={data?.days as Day[]}
               />
             </JourneyCard>
           </div>
